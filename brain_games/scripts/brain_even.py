@@ -38,6 +38,10 @@ def main():  # noqa: C901
                 correct_answer = 'no'
             if answer == 'no':
                 correct_answer = 'yes'
+            if answer.lower() != 'yes' and (rand_num % 2) != 0:
+                correct_answer = 'no'
+            if answer.lower() != 'no' and (rand_num % 2) == 0:
+                correct_answer = 'yes'
             i += 3
             print(f"'{answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")  # noqa: E501
             print(f"Let's try again, {brain_games.cli.name}!")
