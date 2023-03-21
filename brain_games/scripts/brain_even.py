@@ -5,7 +5,7 @@ import brain_games.scripts.brain_games
 import brain_games.cli
 
 
-def main():
+def main():  # noqa: C901
     brain_games.scripts.brain_games.main()
     text_of_exr = 'Answer "yes" if the number is even, otherwise answer "no".'
     print(text_of_exr)
@@ -39,7 +39,7 @@ def main():
             if answer == 'no':
                 correct_answer = 'yes'
             i += 3
-            print(f"'{answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
+            print(f"'{answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")  # noqa: E501
             print(f"Let's try again, {brain_games.cli.name}!")
 
 
