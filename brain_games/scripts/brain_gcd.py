@@ -7,7 +7,7 @@ def set_expression():
     first_numb = brain_games.game_engine.generate_rand_num()
     second_numb = brain_games.game_engine.generate_rand_num()
     answer = str(gcd(first_numb, second_numb))
-    question = f'{first_numb} {second_numb}'
+    question = f'Question: {first_numb} {second_numb}'
 
     return question, answer
 
