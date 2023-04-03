@@ -5,7 +5,7 @@ import brain_games.cli
 
 
 def generate_rand_num():
-    radius_of_random = (1, 50)
+    radius_of_random = (1, 20)
     rand_num = randint(radius_of_random[0], radius_of_random[1])
     return rand_num
 
