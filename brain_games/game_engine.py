@@ -10,7 +10,7 @@ def generate_rand_num():
     return rand_num
 
 
-def main(task_text='', question_text='', correct_answer=''):
+def main(task_text, game_func):
     brain_games.scripts.brain_games.main()
 
     print(task_text)
@@ -18,6 +18,7 @@ def main(task_text='', question_text='', correct_answer=''):
     rounds_amount = 3
 
     while i <= rounds_amount:
+        question_text, correct_answer = game_func()
         print(question_text)
         answer = prompt.string('Your answer: ')
 
