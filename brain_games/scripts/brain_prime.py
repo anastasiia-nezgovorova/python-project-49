@@ -8,7 +8,9 @@ def set_exercise():
     num = brain_games.game_engine.generate_rand_num()
     marker = False
 
-    if num > 1:
+    if num <= 1:
+        marker = True
+    elif num > 1:
         for i in range(2, num):
             if (num % i) == 0:
                 marker = True
