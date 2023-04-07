@@ -54,3 +54,7 @@ def set_progression():  # noqa: C901
 
 def main():
     brain_games.game_engine.main(task, set_progression)
+
+
+if __name__ == '__main__':
+    main()

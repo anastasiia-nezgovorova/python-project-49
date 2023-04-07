@@ -32,3 +32,7 @@ def set_expression():
 
 def main():
     brain_games.game_engine.main(task, set_expression)
+
+
+if __name__ == '__main__':
+    main()
