@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import brain_games.game_engine
 
-
 task = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 

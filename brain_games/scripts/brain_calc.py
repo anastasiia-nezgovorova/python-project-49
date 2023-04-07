@@ -2,6 +2,8 @@
 from random import randint
 import brain_games.game_engine
 
+task = 'What is the result of the expression?'
+
 
 def choose_oper():
     operators_set = ("*", "+", "-")
@@ -26,9 +28,6 @@ def set_expression():
     expression = f'Question: {first_numb} {oper} {second_numb}'
 
     return expression, answer
-
-
-task = 'What is the result of the expression?'
 
 
 def main():

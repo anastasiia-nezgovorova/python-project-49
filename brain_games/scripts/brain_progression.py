@@ -3,6 +3,8 @@ from random import randint
 import brain_games.game_engine
 from brain_games.scripts.brain_calc import choose_oper
 
+task = 'What number is missing in the progression?'
+
 
 def generate_step():
     radius_of_random = (1, 10)
@@ -48,9 +50,6 @@ def set_progression():  # noqa: C901
     progression_text = progression_text.replace("'", "")
 
     return progression_text, str(answer)
-
-
-task = 'What number is missing in the progression?'
 
 
 def main():

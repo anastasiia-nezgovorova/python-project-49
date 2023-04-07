@@ -2,6 +2,8 @@
 import brain_games.game_engine
 from math import gcd
 
+task = 'Find the greatest common divisor of given numbers.'
+
 
 def set_expression():
     first_numb = brain_games.game_engine.generate_rand_num()
@@ -10,9 +12,6 @@ def set_expression():
     question = f'Question: {first_numb} {second_numb}'
 
     return question, answer
-
-
-task = 'Find the greatest common divisor of given numbers.'
 
 
 def main():
