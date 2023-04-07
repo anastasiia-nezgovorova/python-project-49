@@ -22,7 +22,7 @@ def main(task_text, game_func):
         print(question_text)
         answer = prompt.string('Your answer: ')
 
-        if answer == correct_answer:
+        if answer.lower() == correct_answer:
             if i == rounds_amount:
                 print(f'Congratulations, {brain_games.cli.name}!')
             else:

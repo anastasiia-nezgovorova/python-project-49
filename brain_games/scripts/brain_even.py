@@ -1,51 +1,20 @@
 #!/usr/bin/env python3
-import random
-import prompt
-import brain_games.scripts.brain_games
-import brain_games.cli
+import brain_games.game_engine
 
 
-def main():  # noqa: C901
-    brain_games.scripts.brain_games.main()
-    text_of_exr = 'Answer "yes" if the number is even, otherwise answer "no".'
-    print(text_of_exr)
-
-    radius_of_random = (1, 100)
-    i = 1
-    num_of_rounds = 3
-    correct_answer = ''
-
-    while i <= num_of_rounds:
-        rand_num = random.randint(radius_of_random[0], radius_of_random[1])
-        text_of_question = f'Question: {rand_num}'
-        print(text_of_question)
-        answer = prompt.string('Your answer: ')
-
-        if (rand_num % 2) == 0 and answer.lower() == 'yes':
-            if i == num_of_rounds:
-                print(f'Congratulations, {brain_games.cli.name}!')
-            else:
-                print('Correct!')
-            i += 1
-        elif (rand_num % 2) != 0 and answer.lower() == 'no':
-            if i == num_of_rounds:
-                print(f'Congratulations, {brain_games.cli.name}!')
-            else:
-                print('Correct!')
-            i += 1
-        else:
-            if answer == 'yes':
-                correct_answer = 'no'
-            if answer == 'no':
-                correct_answer = 'yes'
-            if answer.lower() != 'yes' and (rand_num % 2) != 0:
-                correct_answer = 'no'
-            if answer.lower() != 'no' and (rand_num % 2) == 0:
-                correct_answer = 'yes'
-            i += 3
-            print(f"'{answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")  # noqa: E501
-            print(f"Let's try again, {brain_games.cli.name}!")
+task = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
-if __name__ == '__main__':
-    main()
+def set_exercise():
+    num = brain_games.game_engine.generate_rand_num()
+    question = f'Question: {num}'
+    answer = 'no'
+
+    if (num % 2) == 0:
+        answer = 'yes'
+
+    return question, answer
+
+
+def main():
+    brain_games.game_engine.main(task, set_exercise)
