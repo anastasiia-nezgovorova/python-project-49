@@ -15,15 +15,15 @@ def main(task_text, game_func):
 
     print(task_text)
     i = 1
-    rounds_amount = 3
+    ROUNDS_AMOUNT = 3
 
-    while i <= rounds_amount:
+    while i <= ROUNDS_AMOUNT:
         question_text, correct_answer = game_func()
         print(question_text)
         answer = prompt.string('Your answer: ')
 
         if answer.lower() == correct_answer:
-            if i == rounds_amount:
+            if i == ROUNDS_AMOUNT:
                 print(f'Congratulations, {brain_games.cli.name}!')
             else:
                 print('Correct!')
