@@ -1,8 +1,15 @@
 #!/usr/bin/env python3
 from random import randint
-import brain_games.game_engine
+from brain_games.game_engine import main as engine_main
+
 
 task = 'What is the result of the expression?'
+
+
+def generate_rand_num():
+    radius_of_random = (-100, 100)
+    rand_num = randint(radius_of_random[0], radius_of_random[1])
+    return rand_num
 
 
 def choose_oper():
@@ -14,8 +21,8 @@ def choose_oper():
 
 def set_expression():
     answer = 0
-    first_numb = brain_games.game_engine.generate_rand_num()
-    second_numb = brain_games.game_engine.generate_rand_num()
+    first_numb = generate_rand_num()
+    second_numb = generate_rand_num()
     oper = choose_oper()
 
     if oper == '*':
@@ -31,7 +38,7 @@ def set_expression():
 
 
 def main():
-    brain_games.game_engine.main(task, set_expression)
+    engine_main(task, set_expression)
 
 
 if __name__ == '__main__':

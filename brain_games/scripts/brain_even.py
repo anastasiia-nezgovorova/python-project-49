@@ -1,11 +1,18 @@
 #!/usr/bin/env python3
-import brain_games.game_engine
+from random import randint
+from brain_games.game_engine import main as engine_main
 
 task = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
+def generate_rand_num():
+    radius_of_random = (0, 100)
+    rand_num = randint(radius_of_random[0], radius_of_random[1])
+    return rand_num
+
+
 def set_exercise():
-    num = brain_games.game_engine.generate_rand_num()
+    num = generate_rand_num()
     question = f'Question: {num}'
     answer = 'no'
 
@@ -16,7 +23,7 @@ def set_exercise():
 
 
 def main():
-    brain_games.game_engine.main(task, set_exercise)
+    engine_main(task, set_exercise)
 
 
 if __name__ == '__main__':
