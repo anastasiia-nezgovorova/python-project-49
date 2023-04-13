@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import brain_games.game_engine
-from brain_games.games import set_progression
+from brain_games.games.progression import set_progression
 
 task = 'What number is missing in the progression?'
 
