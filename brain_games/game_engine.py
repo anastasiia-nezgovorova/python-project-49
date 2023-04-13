@@ -1,4 +1,3 @@
-from random import randint
 import prompt
 
 ROUNDS_AMOUNT = 3
@@ -8,12 +7,6 @@ def welcome_user():
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
     return name
-
-
-def generate_rand_num():
-    radius_of_random = (1, 30)
-    rand_num = randint(radius_of_random[0], radius_of_random[1])
-    return rand_num
 
 
 def main(task_text, game_func):
