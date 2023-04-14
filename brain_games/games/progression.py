@@ -49,7 +49,9 @@ def set_progression():  # noqa: C901
     progression[ind_hidden_numb] = '..'
 
     progression_text = str(progression)
-    progression_text = progression_text.replace("[]',", '')
-    progression_text = f'Question: {progression_text}'
+    progression_text = progression_text.replace("[", 'Question: ')
+    progression_text = progression_text.replace("]", '')
+    progression_text = progression_text.replace("'", '')
+    progression_text = progression_text.replace(",", '')
 
     return progression_text, str(answer)
