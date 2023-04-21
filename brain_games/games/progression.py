@@ -1,12 +1,6 @@
 from random import randint
 
 
-def generate_rand_num():
-    radius_of_random = (-100, 100)
-    rand_num = randint(radius_of_random[0], radius_of_random[1])
-    return rand_num
-
-
 def choose_oper():
     operators_set = ("+", "-")
     index_radius = (0, len(operators_set) - 1)
@@ -21,11 +15,15 @@ def generate_step():
 
 
 def set_progression():  # noqa: C901
-    step = generate_step()
-    oper = choose_oper()
-    first_numb = generate_rand_num()
+    start_border_of_random = -100
+    end_border_of_random = 100
+    radius = (start_border_of_random, end_border_of_random)
+    first_numb = randint(radius[0], radius[1])
     second_numb = 0
     third_numb = 0
+
+    step = generate_step()
+    oper = choose_oper()
 
     if oper == '+':
         second_numb = first_numb + step

@@ -1,14 +1,12 @@
 from random import randint
 
 
-def generate_rand_num():
-    radius_of_random = (0, 100)
-    rand_num = randint(radius_of_random[0], radius_of_random[1])
-    return rand_num
-
-
 def set_exercise():
-    num = generate_rand_num()
+    start_border_of_random = 0
+    end_border_of_random = 100
+    radius = (start_border_of_random, end_border_of_random)
+    num = randint(radius[0], radius[1])
+
     question = f'Question: {num}'
     answer = 'no'
 

@@ -1,12 +1,6 @@
 from random import randint
 
 
-def generate_rand_num():
-    radius_of_random = (-100, 100)
-    rand_num = randint(radius_of_random[0], radius_of_random[1])
-    return rand_num
-
-
 def choose_oper():
     operators_set = ("*", "+", "-")
     index_radius = (0, len(operators_set) - 1)
@@ -15,10 +9,14 @@ def choose_oper():
 
 
 def set_expression():
-    answer = 0
-    first_numb = generate_rand_num()
-    second_numb = generate_rand_num()
+    start_border_of_random = -100
+    end_border_of_random = 100
+    radius = (start_border_of_random, end_border_of_random)
+    first_numb = randint(radius[0], radius[1])
+    second_numb = randint(radius[0], radius[1])
+
     oper = choose_oper()
+    answer = 0
 
     if oper == '*':
         answer = str(first_numb * second_numb)

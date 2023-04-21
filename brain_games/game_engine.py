@@ -20,12 +20,13 @@ def main(task_text, game_func):
         print(question_text)
         answer = prompt.string('Your answer: ')
 
-        if answer == correct_answer:
-            if i == ROUNDS_AMOUNT:
-                print(f'Congratulations, {u_name}!')
-            else:
-                print('Correct!')
+        if answer == correct_answer and i < ROUNDS_AMOUNT:
             i += 1
+            print('Correct!')
+
+        elif answer == correct_answer and i == ROUNDS_AMOUNT:
+            print(f'Congratulations, {u_name}!')
+            break
         else:
             i += 3
             print(f"'{answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")  # noqa: E501
