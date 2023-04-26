@@ -16,8 +16,9 @@ def main(task_text, game_func):
     i = 1
 
     while i <= ROUNDS_AMOUNT:
-        question_text, correct_answer = game_func()
-        print(question_text)
+        question, correct_answer = game_func()
+        question = f'Question: {question}'
+        print(question)
         answer = prompt.string('Your answer: ')
 
         if answer == correct_answer and i < ROUNDS_AMOUNT:

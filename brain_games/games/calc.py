@@ -16,6 +16,14 @@ def set_expression():
     second_numb = randint(radius[0], radius[1])
 
     oper = choose_oper()
+
+    expression = [first_numb, oper, second_numb]
+
+    return expression
+
+
+def set_answer(expr):
+    [first_numb, oper, second_numb] = expr
     answer = 0
 
     if oper == '*':
@@ -25,6 +33,17 @@ def set_expression():
     if oper == '-':
         answer = str(first_numb - second_numb)
 
-    expression = f'Question: {first_numb} {oper} {second_numb}'
+    return answer
 
+
+def set_expression_and_answer():
+    expression = set_expression()
+
+    answer = set_answer(expression)
+
+    expression = str(expression)
+    expression = expression.replace('[', '')
+    expression = expression.replace(']', '')
+    expression = expression.replace(',', '')
+    expression = expression.replace("'", '')
     return expression, answer
