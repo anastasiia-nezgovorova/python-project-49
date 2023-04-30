@@ -7,6 +7,10 @@ def set_exercise():
     radius = (start_border_of_random, end_border_of_random)
     num = randint(radius[0], radius[1])
 
+    return num
+
+
+def set_answer(num):
     answer = 'yes'
 
     if num <= 1:
@@ -16,6 +20,10 @@ def set_exercise():
             if (num % i) == 0:
                 answer = 'no'
 
-    question = f'Question: {num}'
+    return answer
 
-    return question, answer
+
+def set_exercise_and_answer():
+    exercise = set_exercise()
+    answer = set_answer(exercise)
+    return exercise, answer

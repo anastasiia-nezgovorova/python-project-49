@@ -42,14 +42,24 @@ def set_progression():  # noqa: C901
         progression.append(third_numb)
         second_numb = third_numb
 
-    ind_hidden_numb = randint(0, len(progression) - 1)
-    answer = progression[ind_hidden_numb]
+    return progression
+
+
+def set_answer_and_stub(progression):
+    ind_hidden_num = randint(0, len(progression) - 1)
+    answer = str(progression[ind_hidden_num])
+    return [answer, ind_hidden_num]
+
+
+def set_progression_and_answer():
+    progression = set_progression()
+    [answer, ind_hidden_numb] = set_answer_and_stub(progression)
     progression[ind_hidden_numb] = '..'
 
     progression_text = str(progression)
-    progression_text = progression_text.replace("[", 'Question: ')
+    progression_text = progression_text.replace("[", '')
     progression_text = progression_text.replace("]", '')
     progression_text = progression_text.replace("'", '')
     progression_text = progression_text.replace(",", '')
 
-    return progression_text, str(answer)
+    return progression_text, answer

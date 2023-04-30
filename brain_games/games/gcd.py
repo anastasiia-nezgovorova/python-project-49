@@ -9,7 +9,26 @@ def set_expression():
     first_numb = randint(radius[0], radius[1])
     second_numb = randint(radius[0], radius[1])
 
-    answer = str(gcd(first_numb, second_numb))
-    question = f'Question: {first_numb} {second_numb}'
+    expression = [first_numb, second_numb]
 
-    return question, answer
+    return expression
+
+
+def set_answer(expr):
+    [first_numb, second_numb] = expr
+    answer = str(gcd(first_numb, second_numb))
+
+    return answer
+
+
+def set_expression_and_answer():
+    expression = set_expression()
+    answer = set_answer(expression)
+
+    expression = str(expression)
+    expression = expression.replace('[', '')
+    expression = expression.replace(']', '')
+    expression = expression.replace(',', '')
+    expression = expression.replace("'", '')
+
+    return expression, answer
