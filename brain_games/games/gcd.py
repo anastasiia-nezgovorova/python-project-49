@@ -15,20 +15,15 @@ def set_expression():
 
 
 def set_answer(expr):
-    [first_numb, second_numb] = expr
-    answer = str(gcd(first_numb, second_numb))
+    first_numb, second_numb = expr
+    answer = gcd(first_numb, second_numb)
 
     return answer
 
 
 def set_expression_and_answer():
-    expression = set_expression()
-    answer = set_answer(expression)
-
-    expression = str(expression)
-    expression = expression.replace('[', '')
-    expression = expression.replace(']', '')
-    expression = expression.replace(',', '')
-    expression = expression.replace("'", '')
+    [first_num, second_num] = set_expression()
+    answer = str(set_answer([first_num, second_num]))
+    expression = f'{first_num} {second_num}'
 
     return expression, answer

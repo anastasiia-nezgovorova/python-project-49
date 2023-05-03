@@ -23,27 +23,22 @@ def set_expression():
 
 
 def set_answer(expr):
-    [first_numb, oper, second_numb] = expr
+    first_numb, oper, second_numb = expr
     answer = 0
 
     if oper == '*':
-        answer = str(first_numb * second_numb)
+        answer = first_numb * second_numb
     if oper == '+':
-        answer = str(first_numb + second_numb)
+        answer = first_numb + second_numb
     if oper == '-':
-        answer = str(first_numb - second_numb)
+        answer = first_numb - second_numb
 
     return answer
 
 
 def set_expression_and_answer():
-    expression = set_expression()
+    [first_num, oper, second_num] = set_expression()
+    expression = f'{first_num} {oper} {second_num}'
+    answer = str(set_answer([first_num, oper, second_num]))
 
-    answer = set_answer(expression)
-
-    expression = str(expression)
-    expression = expression.replace('[', '')
-    expression = expression.replace(']', '')
-    expression = expression.replace(',', '')
-    expression = expression.replace("'", '')
     return expression, answer
