@@ -2,10 +2,12 @@ from random import randint
 from math import gcd
 
 
+START_BORDER_OF_RANDOM = 1
+END_BORDER_OF_RANDOM = 30
+
+
 def set_expression():
-    start_border_of_random = 1
-    end_border_of_random = 30
-    radius = (start_border_of_random, end_border_of_random)
+    radius = (START_BORDER_OF_RANDOM, END_BORDER_OF_RANDOM)
     first_numb = randint(radius[0], radius[1])
     second_numb = randint(radius[0], radius[1])
 
@@ -14,16 +16,14 @@ def set_expression():
     return expression
 
 
-def set_answer(expr):
-    first_numb, second_numb = expr
+def set_answer(first_numb, second_numb):
     answer = gcd(first_numb, second_numb)
-
     return answer
 
 
 def set_expression_and_answer():
     [first_num, second_num] = set_expression()
-    answer = str(set_answer([first_num, second_num]))
+    answer = str(set_answer(first_num, second_num))
     expression = f'{first_num} {second_num}'
 
     return expression, answer

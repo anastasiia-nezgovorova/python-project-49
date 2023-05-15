@@ -1,6 +1,10 @@
 from random import randint
 
 
+START_BORDER_OF_RANDOM = -100
+END_BORDER_OF_RANDOM = 100
+
+
 def choose_oper():
     operators_set = ("*", "+", "-")
     index_radius = (0, len(operators_set) - 1)
@@ -9,9 +13,7 @@ def choose_oper():
 
 
 def set_expression():
-    start_border_of_random = -100
-    end_border_of_random = 100
-    radius = (start_border_of_random, end_border_of_random)
+    radius = (START_BORDER_OF_RANDOM, END_BORDER_OF_RANDOM)
     first_numb = randint(radius[0], radius[1])
     second_numb = randint(radius[0], radius[1])
 
@@ -22,8 +24,7 @@ def set_expression():
     return expression
 
 
-def set_answer(expr):
-    first_numb, oper, second_numb = expr
+def set_answer(first_numb, oper, second_numb):
     answer = 0
 
     if oper == '*':
@@ -39,6 +40,6 @@ def set_answer(expr):
 def set_expression_and_answer():
     [first_num, oper, second_num] = set_expression()
     expression = f'{first_num} {oper} {second_num}'
-    answer = str(set_answer([first_num, oper, second_num]))
+    answer = str(set_answer(first_num, oper, second_num))
 
     return expression, answer

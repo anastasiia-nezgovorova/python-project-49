@@ -1,6 +1,10 @@
 from random import randint
 
 
+FIRST_BORDER_OF_LEN = 5
+SECOND_BORDER_OF_LEN = 10
+
+
 def choose_oper():
     operators_set = ("+", "-")
     index_radius = (0, len(operators_set) - 1)
@@ -31,7 +35,7 @@ def set_progression():  # noqa: C901
         second_numb = first_numb - step
 
     progression = [first_numb, second_numb]
-    progression_len = randint(5, 10)
+    progression_len = randint(FIRST_BORDER_OF_LEN, SECOND_BORDER_OF_LEN)
 
     while len(progression) < progression_len:
         if oper == '+':
