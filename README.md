@@ -10,7 +10,7 @@ Each game asks questions that need to be answered correctly.
 After three correct answers, the game is considered to be completed.
 Wrong answers end the game and offer to play it again.
 
-# Games:
+#### Games:
 
       - Calculator. Arithmetic expressions to be evaluated
       - progression. Finding missing numbers in a sequence of numbers
