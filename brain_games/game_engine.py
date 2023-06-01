@@ -9,7 +9,7 @@ def welcome_user():
     return name
 
 
-def main(task_text, game_func):
+def run_game(task_text, game_func):
     print('Welcome to the Brain Games!')
     u_name = welcome_user()
     print(task_text)
