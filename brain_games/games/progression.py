@@ -1,6 +1,9 @@
 from random import randint
 
 
+TASK = 'What number is missing in the progression?'
+
+
 FIRST_BORDER_OF_LEN = 5
 SECOND_BORDER_OF_LEN = 10
 

@@ -2,6 +2,7 @@ from random import randint
 from math import gcd
 
 
+TASK = 'Find the greatest common divisor of given numbers.'
 START_BORDER_OF_RANDOM = 1
 END_BORDER_OF_RANDOM = 30
 

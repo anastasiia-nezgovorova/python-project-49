@@ -1,6 +1,9 @@
 from random import randint
 
 
+TASK = 'Answer "yes" if the number is even, otherwise answer "no".'
+
+
 def set_exercise():
     start_border_of_random = 0
     end_border_of_random = 100

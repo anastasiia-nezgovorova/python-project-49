@@ -1,6 +1,7 @@
 from random import randint
 
 
+TASK = 'What is the result of the expression?'
 START_BORDER_OF_RANDOM = -100
 END_BORDER_OF_RANDOM = 100
 
