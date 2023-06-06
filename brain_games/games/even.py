@@ -13,7 +13,7 @@ def set_exercise():
     return num
 
 
-def set_answer(num):
+def is_even(num):
     answer = 'no'
 
     if (num % 2) == 0:
@@ -24,6 +24,6 @@ def set_answer(num):
 
 def set_exercise_and_answer():
     exercise = set_exercise()
-    answer = set_answer(exercise)
+    answer = is_even(exercise)
 
     return exercise, answer

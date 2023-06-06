@@ -13,7 +13,7 @@ def set_exercise():
     return num
 
 
-def set_answer(num):
+def is_prime(num):
     answer = 'yes'
 
     if num <= 1:
@@ -28,5 +28,5 @@ def set_answer(num):
 
 def set_exercise_and_answer():
     exercise = set_exercise()
-    answer = set_answer(exercise)
+    answer = is_prime(exercise)
     return exercise, answer
