@@ -1,11 +1,11 @@
 from random import randint
 
 
-TASK = 'What number is missing in the progression?'
-
-
+RULE = 'What number is missing in the progression?'
 FIRST_BORDER_OF_LEN = 5
 SECOND_BORDER_OF_LEN = 10
+START_BORDER_OF_RANDOM = -100
+END_BORDER_OF_RANDOM = 100
 
 
 def choose_oper():
@@ -22,9 +22,7 @@ def generate_step():
 
 
 def set_progression():  # noqa: C901
-    start_border_of_random = -100
-    end_border_of_random = 100
-    radius = (start_border_of_random, end_border_of_random)
+    radius = (START_BORDER_OF_RANDOM, END_BORDER_OF_RANDOM)
     first_numb = randint(radius[0], radius[1])
     second_numb = 0
     third_numb = 0

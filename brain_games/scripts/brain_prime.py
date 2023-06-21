@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 from brain_games.game_engine import run_game
 from brain_games.games.prime import set_exercise_and_answer
-from brain_games.games.prime import TASK
+from brain_games.games.prime import RULE
 
 
 def main():
-    run_game(TASK, set_exercise_and_answer)
+    run_game(RULE, set_exercise_and_answer)
 
 
 if __name__ == '__main__':

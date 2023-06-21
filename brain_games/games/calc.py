@@ -1,22 +1,20 @@
 from random import randint
 
 
-TASK = 'What is the result of the expression?'
+RULE = 'What is the result of the expression?'
 START_BORDER_OF_RANDOM = -100
 END_BORDER_OF_RANDOM = 100
 
 
 def choose_operator():
     operators_set = ("*", "+", "-")
-    index_radius = (0, len(operators_set) - 1)
-    rand_oper = operators_set[randint(index_radius[0], index_radius[1])]
+    rand_oper = operators_set[randint(0, len(operators_set) - 1)]
     return rand_oper
 
 
 def set_expression():
-    radius = (START_BORDER_OF_RANDOM, END_BORDER_OF_RANDOM)
-    first_numb = randint(radius[0], radius[1])
-    second_numb = randint(radius[0], radius[1])
+    first_numb = randint(START_BORDER_OF_RANDOM, END_BORDER_OF_RANDOM)
+    second_numb = randint(START_BORDER_OF_RANDOM, END_BORDER_OF_RANDOM)
 
     oper = choose_operator()
 
