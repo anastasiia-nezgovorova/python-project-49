@@ -1,4 +1,4 @@
-from random import randint
+from random import randint, choice
 
 
 RULE = 'What number is missing in the progression?'
@@ -8,44 +8,37 @@ START_BORDER_OF_RANDOM = -100
 END_BORDER_OF_RANDOM = 100
 
 
-def choose_oper():
+def choose_operator():
     operators_set = ("+", "-")
-    index_radius = (0, len(operators_set) - 1)
-    rand_oper = operators_set[randint(index_radius[0], index_radius[1])]
-    return rand_oper
+    random_operator = choice(operators_set)
+    return random_operator
 
 
 def generate_step():
-    radius_of_random = (1, 10)
-    step = randint(radius_of_random[0], radius_of_random[1])
+    step = randint(1, 10)
     return step
 
 
-def set_progression():  # noqa: C901
-    radius = (START_BORDER_OF_RANDOM, END_BORDER_OF_RANDOM)
-    first_numb = randint(radius[0], radius[1])
-    second_numb = 0
-    third_numb = 0
-
+def generate_random_kit_for_progression():
+    first_number = randint(START_BORDER_OF_RANDOM, END_BORDER_OF_RANDOM)
     step = generate_step()
-    oper = choose_oper()
+    progression_length = randint(FIRST_BORDER_OF_LEN, SECOND_BORDER_OF_LEN)
+    operator = choose_operator()
+    return [first_number, step, progression_length, operator]
 
-    if oper == '+':
-        second_numb = first_numb + step
-    if oper == '-':
-        second_numb = first_numb - step
 
-    progression = [first_numb, second_numb]
-    progression_len = randint(FIRST_BORDER_OF_LEN, SECOND_BORDER_OF_LEN)
+def set_progression(random_kit):
+    first_number, step, progression_length, operator = random_kit
+    progression = [first_number]
 
-    while len(progression) < progression_len:
-        if oper == '+':
-            third_numb = second_numb + step
-        if oper == '-':
-            third_numb = second_numb - step
+    for _ in range(1, progression_length):
+        if operator == '+':
+            next_number = first_number + step
+        else:
+            next_number = first_number - step
 
-        progression.append(third_numb)
-        second_numb = third_numb
+        progression.append(next_number)
+        first_number = next_number
 
     return progression
 
@@ -57,14 +50,10 @@ def set_answer_and_stub(progression):
 
 
 def set_progression_and_answer():
-    progression = set_progression()
-    [answer, ind_hidden_numb] = set_answer_and_stub(progression)
-    progression[ind_hidden_numb] = '..'
+    progression = set_progression(generate_random_kit_for_progression())
+    [answer, hidden_number_index] = set_answer_and_stub(progression)
+    progression[hidden_number_index] = '..'
 
-    progression_text = str(progression)
-    progression_text = progression_text.replace("[", '')
-    progression_text = progression_text.replace("]", '')
-    progression_text = progression_text.replace("'", '')
-    progression_text = progression_text.replace(",", '')
+    progression_text = ' '.join(map(str, progression))
 
     return progression_text, answer
