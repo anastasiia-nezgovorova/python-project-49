@@ -28,10 +28,8 @@ def run_game(task_text, get_round_data):
             print(f"Let's try again, {user_name}!")
             break
 
-        if i == ROUNDS_AMOUNT:
-            print(f'Congratulations, {user_name}!')
-            break
+        print('Correct!')
+        i += 1
 
-        if i < ROUNDS_AMOUNT:
-            i += 1
-            print('Correct!')
+    else:
+        print(f'Congratulations, {user_name}!')
