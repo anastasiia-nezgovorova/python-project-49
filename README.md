@@ -17,17 +17,39 @@ The project consists of the main folder "brain_games" and auxiliary files.
 To add a new game to the project, you need to create a file with its logic in the "games" folder and a file in the "scripts" folder that launches the game.
 Also in the pyproject.toml in the "tool.poetry.scripts" section, you need to make an appropriate entry about the new game.
 
-To install games, you need to clone the project on your device.
-Next, you need to sequentially enter the make-commands "install",
-"build", "publish", "package-install" while in the cloned repository.
+### Installation and launch
 
-#### Games:
+#### Get the project
 
-      - brain-calc         -Calculator. Arithmetic expressions to be evaluated
-      - brain-progression  -Finding missing numbers in a sequence of numbers
-      - beain-even         -Definition of an even number
-      - brain-gcd          -Definition of the Greatest Common Divisor
-      - brain-prime        -Definition of prime number
+```
+$ git clone https://github.com/anastasiia-nez/python-project-49.git
+$ cd ./python-project-49
+$ make install
+```
+
+#### Run games without installation
+
+```
+$ make the_game_name
+```
+
+
+#### Install and launch games
+
+```
+$ make build
+$ make package-install
+$ the_game_name
+```
+
+### Games:
+
+	* brain-calc              -Calculator. Arithmetic expressions to be evaluated
+	* brain-progression       -Finding missing numbers in a sequence of numbers
+	* beain-even              -Definition of an even number
+	* brain-gcd               -Definition of the Greatest Common Divisor
+	* brain-prime             -Definition of prime number
+
 
 ### Examples:
 [![asciicast](https://asciinema.org/a/5jG4VIkF3tcjBRfiBycFJZKgC.svg)](https://asciinema.org/a/5jG4VIkF3tcjBRfiBycFJZKgC)
@@ -39,4 +61,3 @@ Next, you need to sequentially enter the make-commands "install",
 [![asciicast](https://asciinema.org/a/574996.svg)](https://asciinema.org/a/574996)
 
 [![asciicast](https://asciinema.org/a/575054.svg)](https://asciinema.org/a/575054)
-
