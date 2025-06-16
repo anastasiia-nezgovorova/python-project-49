@@ -5,7 +5,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/d8cb7553b2ceef7c8dd2/maintainability)](https://codeclimate.com/github/anastasiia-nez/python-project-49/maintainability)
 
 ### Description
- "Brain Games" is a set of five console games based on popular mobile brain training apps.
+ "Brain Games" is a set of five CLI games based on popular mobile brain training apps.
 Each game asks questions that need to be answered correctly.
 After three correct answers, the game is considered to be completed.
 Wrong answers end the game and offer to play it again.
